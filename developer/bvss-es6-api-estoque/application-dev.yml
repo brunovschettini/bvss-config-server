@@ -1,0 +1,11 @@
+spring:
+  application:
+    name: api--aws-studies
+
+server:
+  port: 5000
+  servlet:
+    context-path: /api--aws-studies
+
+test:
+  first: true
