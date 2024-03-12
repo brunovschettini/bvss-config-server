@@ -1,0 +1,37 @@
+server:
+  port: 8888
+
+spring:
+  autoconfigure:
+    exclude: org.springframework.boot.autoconfigure.security.SecurityAutoConfiguration
+
+  application:
+    name: bvss-config-server
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/brunovschettini/bvss-config-server-repo.git
+          search-paths:
+            - '{application}'
+          skipSslValidation: true
+          username:
+          password:
+          default-label: main
+          clone-on-start: true
+  security:
+    basic:
+      enabled: true
+      path: /**
+    user:
+      name: developer
+      password: developer
+
+
+# enable all actuator endpoints for testing (review this for real deployments)
+management:
+  context-path: /bvss-config-server
+  endpoints:
+    web:
+      include: '*'
+
