@@ -17,9 +17,6 @@ repositories {
 
 ext {
 	set('springCloudVersion', "2023.0.0")
-	// https://mvnrepository.com/artifact/org.springframework.cloud/spring-cloud-dependencies
-//	import group: 'org.springframework.cloud', name: 'spring-cloud-dependencies', version: 'Hoxton.RELEASE', ext: 'pom'
-
 }
 
 dependencies {
@@ -33,9 +30,6 @@ dependencies {
 }
 
 dependencyManagement {
-//	dependencies {
-//		compile "org.springframework.cloud:spring-cloud-dependencies:Hoxton.SR8"
-//	}
 	imports {
 		mavenBom "org.springframework.cloud:spring-cloud-dependencies:${springCloudVersion}"
 	}
